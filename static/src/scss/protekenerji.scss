@@ -784,6 +784,22 @@ $protek-info: #17a2b8;
     }
 }
 
+// Language Switcher (EN | TR) in navbar
+.protek-lang-btn {
+    color: rgba(255, 255, 255, 0.6) !important;
+    @include transition;
+
+    &:hover {
+        color: #fff !important;
+    }
+
+    &.active {
+        color: #fff !important;
+        background: $protek-primary !important;
+        border-color: $protek-primary !important;
+    }
+}
+
 // Responsive Adjustments
 @media (max-width: 768px) {
     .protek-hero {
@@ -826,6 +842,35 @@ $protek-info: #17a2b8;
 // Cart and Search Icons - White Color for visibility in dark header
 .protek-enerji-portal {
     header {
+        // All dropdown menus in the header should have dark bg with white text
+        .dropdown-menu {
+            background: $protek-secondary !important;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            .dropdown-item,
+            a,
+            button,
+            span,
+            li,
+            .nav-link {
+                color: rgba(255, 255, 255, 0.8) !important;
+            }
+
+            .dropdown-item:hover,
+            a:hover,
+            button:hover,
+            .nav-link:hover {
+                background: rgba(255, 255, 255, 0.1) !important;
+                color: #ffffff !important;
+            }
+
+            .dropdown-item.active,
+            .dropdown-item:active {
+                background: rgba(255, 255, 255, 0.15) !important;
+                color: #ffffff !important;
+            }
+        }
+
         // Cart icon
         .o_wsale_my_cart,
         .o_wsale_my_cart a,

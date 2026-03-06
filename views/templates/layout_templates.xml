@@ -64,13 +64,35 @@
                     border: 1px solid rgba(255,255,255,0.2);
                     min-width: 150px;
                 }
-                .protek-enerji-portal header .dropdown-menu .dropdown-item {
-                    color: rgba(255,255,255,0.8);
+                .protek-enerji-portal header .dropdown-menu .dropdown-item,
+                .protek-enerji-portal header .dropdown-menu a,
+                .protek-enerji-portal header .dropdown-menu button,
+                .protek-enerji-portal header .dropdown-menu span,
+                .protek-enerji-portal header .dropdown-menu li,
+                .protek-enerji-portal header .dropdown-menu .nav-link {
+                    color: rgba(255,255,255,0.8) !important;
                     padding: 10px 15px;
                 }
-                .protek-enerji-portal header .dropdown-menu .dropdown-item:hover {
+                .protek-enerji-portal header .dropdown-menu .dropdown-item:hover,
+                .protek-enerji-portal header .dropdown-menu a:hover,
+                .protek-enerji-portal header .dropdown-menu button:hover,
+                .protek-enerji-portal header .dropdown-menu .nav-link:hover {
                     background: rgba(255,255,255,0.1);
-                    color: white;
+                    color: white !important;
+                }
+
+                /* Language Switcher (EN | TR) */
+                .protek-lang-btn {
+                    color: rgba(255,255,255,0.6) !important;
+                    transition: all 0.2s ease;
+                }
+                .protek-lang-btn:hover {
+                    color: #fff !important;
+                }
+                .protek-lang-btn.active {
+                    color: #fff !important;
+                    background: #E3000F !important;
+                    border-color: #E3000F !important;
                 }
             </style>
         </xpath>
@@ -190,30 +212,27 @@
         </div>
     </template>
 
-    <!-- Language Selector in Header -->
-    <template id="protek_language_selector" name="Protek Language Selector" inherit_id="website.layout">
-        <xpath expr="//header//a[hasclass('btn')][contains(@href, 'contactus')]" position="before">
-            <div class="dropdown d-inline-block me-2">
-                <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5);">
-                    <i class="fa fa-globe me-1"></i>
-                    <t t-esc="request.env.lang.split('_')[0].upper() if request.env.lang else 'EN'"/>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <t t-foreach="request.website.language_ids" t-as="lg">
-                        <li>
-                            <a class="dropdown-item" t-attf-href="/website/lang/#{lg.code}">
-                                <t t-if="lg.code == request.env.lang">
-                                    <i class="fa fa-check me-2 text-success"></i>
-                                </t>
-                                <t t-else="">
-                                    <span class="me-4"></span>
-                                </t>
-                                <t t-esc="lg.name"/>
-                            </a>
-                        </li>
+    <!-- Hide default Odoo language selector (we use our own EN|TR switcher) -->
+    <template id="protek_hide_default_lang_selector" name="Hide Default Language Selector" inherit_id="website.header_language_selector">
+        <xpath expr="//li[@data-name='Language Selector']" position="replace"/>
+    </template>
+
+    <!-- Language Selector - At the very right of the navbar, after Contact Us button -->
+    <template id="protek_language_selector" name="Protek Language Selector" inherit_id="website.header_call_to_action">
+        <xpath expr="//li" position="after">
+            <li class="nav-item d-flex align-items-center ms-2">
+                <div class="d-flex align-items-center gap-1">
+                    <t t-set="lang_list" t-value="[lg for lg in request.website.language_ids if lg.code[:2] in ('en','tr')]"/>
+                    <t t-foreach="lang_list" t-as="lg">
+                        <span t-if="not lg_first" style="color:rgba(255,255,255,0.3);">|</span>
+                        <a t-attf-href="/website/lang/#{lg.url_code}"
+                           t-attf-class="protek-lang-btn #{('active') if lg.code == request.env.lang else ''}"
+                           style="padding:5px 10px;border-radius:4px;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:0.5px;">
+                            <t t-esc="lg.code[:2].upper()"/>
+                        </a>
                     </t>
-                </ul>
-            </div>
+                </div>
+            </li>
         </xpath>
     </template>
 </odoo>

@@ -5,6 +5,9 @@
     <!-- Delete default Home menus with empty/root URL -->
     <delete model="website.menu" search="[('name', 'ilike', 'home'), ('url', 'in', ['/', '/?', '', False])]"/>
 
+    <!-- Delete default Contact Us menu item (keep only the header button) -->
+    <delete model="website.menu" search="[('name', 'ilike', 'contact'), ('url', 'ilike', 'contactus')]"/>
+
     <!-- Create custom Home menu that redirects to main Protek Enerji website -->
     <record id="menu_protek_home" model="website.menu">
         <field name="name">Home</field>

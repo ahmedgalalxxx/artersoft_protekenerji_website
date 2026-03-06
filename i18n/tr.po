@@ -1,0 +1,504 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * protekenerji
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-06 00:00+0000\n"
+"PO-Revision-Date: 2026-03-06 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: protekenerji
+#: model:website.menu,name:protekenerji.menu_protek_home
+msgid "Home"
+msgstr "Anasayfa"
+
+#. module: protekenerji
+#: model:website.menu,name:protekenerji.menu_protek_my_orders
+msgid "My Orders"
+msgstr "Siparişlerim"
+
+#. module: protekenerji
+#: model:website.menu,name:protekenerji.menu_protek_past_orders
+msgid "Past Orders"
+msgstr "Geçmiş Siparişler"
+
+#. module: protekenerji
+#: model:website.menu,name:protekenerji.menu_protek_about
+msgid "About Us"
+msgstr "Hakkımızda"
+
+#. module: protekenerji
+#: model:website.menu,name:protekenerji.menu_protek_gdpr
+msgid "Privacy Policy (GDPR)"
+msgstr "Gizlilik Politikası (KVKK)"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "View and track your current orders"
+msgstr "Mevcut siparişlerinizi görüntüleyin ve takip edin"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "Continue Shopping"
+msgstr "Alışverişe Devam Et"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "Order #"
+msgstr "Sipariş No"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "Date"
+msgstr "Tarih"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "Status"
+msgstr "Durum"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "Total"
+msgstr "Toplam"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "Actions"
+msgstr "İşlemler"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "Confirmed"
+msgstr "Onaylandı"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "Completed"
+msgstr "Tamamlandı"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "Quotation Sent"
+msgstr "Teklif Gönderildi"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "View"
+msgstr "Görüntüle"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "No Orders Yet"
+msgstr "Henüz Sipariş Yok"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "You haven't placed any orders yet. Start shopping to see your orders here."
+msgstr "Henüz sipariş vermediniz. Siparişlerinizi burada görmek için alışverişe başlayın."
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_orders
+msgid "Start Shopping"
+msgstr "Alışverişe Başla"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Back to Orders"
+msgstr "Siparişlere Dön"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Order Items"
+msgstr "Sipariş Kalemleri"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Product"
+msgstr "Ürün"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Quantity"
+msgstr "Miktar"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Unit Price"
+msgstr "Birim Fiyat"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Subtotal"
+msgstr "Ara Toplam"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Order Summary"
+msgstr "Sipariş Özeti"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Subtotal:"
+msgstr "Ara Toplam:"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Tax:"
+msgstr "KDV:"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Total:"
+msgstr "Toplam:"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Order Status"
+msgstr "Sipariş Durumu"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Order Confirmed"
+msgstr "Sipariş Onaylandı"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Order Completed"
+msgstr "Sipariş Tamamlandı"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_order_page
+msgid "Placed on"
+msgstr "Sipariş tarihi"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_past_orders
+msgid "Order History"
+msgstr "Sipariş Geçmişi"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_past_orders
+msgid "View your completed and past orders"
+msgstr "Tamamlanmış ve geçmiş siparişlerinizi görüntüleyin"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_past_orders
+msgid "Current Orders"
+msgstr "Mevcut Siparişler"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_past_orders
+msgid "Shop"
+msgstr "Mağaza"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_past_orders
+msgid "Items"
+msgstr "Kalem"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_past_orders
+msgid "No Past Orders"
+msgstr "Geçmiş Sipariş Yok"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_past_orders
+msgid "Your order history will appear here once you complete orders."
+msgstr "Siparişlerinizi tamamladığınızda sipariş geçmişiniz burada görünecektir."
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_home_orders
+msgid "Orders"
+msgstr "Siparişler"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_home_orders
+msgid "View your current orders"
+msgstr "Mevcut siparişlerinizi görüntüleyin"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.portal_my_home_orders
+msgid "View your order history"
+msgstr "Sipariş geçmişinizi görüntüleyin"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_shop_login_required
+msgid "Login Required"
+msgstr "Giriş Gerekli"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_shop_login_required
+msgid "To access our shop and make purchases, you need to be logged in. This helps us provide you with a personalized shopping experience and secure transactions."
+msgstr "Mağazamıza erişmek ve alışveriş yapmak için giriş yapmanız gerekmektedir. Bu, size kişiselleştirilmiş bir alışveriş deneyimi ve güvenli işlemler sunmamıza yardımcı olur."
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_shop_login_required
+msgid "Login to Your Account"
+msgstr "Hesabınıza Giriş Yapın"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_shop_login_required
+msgid "Create New Account"
+msgstr "Yeni Hesap Oluşturun"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_shop_login_required
+msgid "Benefits of Creating an Account"
+msgstr "Hesap Oluşturmanın Avantajları"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_shop_login_required
+msgid "Track your orders"
+msgstr "Siparişlerinizi takip edin"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_shop_login_required
+msgid "Faster checkout"
+msgstr "Daha hızlı ödeme"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_shop_login_required
+msgid "Order history"
+msgstr "Sipariş geçmişi"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_shop_login_required
+msgid "Exclusive offers"
+msgstr "Özel teklifler"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_shop_login_required
+msgid "Back to Home Page"
+msgstr "Ana Sayfaya Dön"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_home_page
+msgid "Yerli Isı Sayacı Üreticisi"
+msgstr "Yerli Isı Sayacı Üreticisi"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_home_page
+msgid "Start Shopping Now"
+msgstr "Hemen Alışverişe Başlayın"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_home_page
+msgid "Register"
+msgstr "Kayıt Ol"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_home_page
+msgid "Login"
+msgstr "Giriş Yap"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_home_page
+msgid "Browse Products"
+msgstr "Ürünleri İncele"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_about_page
+msgid "About Protek Enerji"
+msgstr "Protek Enerji Hakkında"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_about_page
+msgid "Our Story"
+msgstr "Hikayemiz"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.login_required_overlay
+msgid "Please login to access our shop and make purchases."
+msgstr "Mağazamıza erişmek ve alışveriş yapmak için lütfen giriş yapın."
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.login_required_overlay
+msgid "Don't have an account?"
+msgstr "Hesabınız yok mu?"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.login_required_overlay
+msgid "Register here"
+msgstr "Buradan kayıt olun"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_footer
+msgid "Privacy Policy"
+msgstr "Gizlilik Politikası"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_footer
+msgid "Terms of Use"
+msgstr "Kullanım Şartları"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_gdpr_page
+msgid "Introduction"
+msgstr "Giriş"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_gdpr_page
+msgid "Information We Collect"
+msgstr "Topladığımız Bilgiler"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_gdpr_page
+msgid "How We Use Your Information"
+msgstr "Bilgilerinizi Nasıl Kullanıyoruz"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_gdpr_page
+msgid "Personal Data"
+msgstr "Kişisel Veriler"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_gdpr_page
+msgid "Automatically Collected Data"
+msgstr "Otomatik Toplanan Veriler"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_empty_shop
+msgid "No Products Found"
+msgstr "Ürün Bulunamadı"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_empty_shop
+msgid "We couldn't find any products matching your criteria."
+msgstr "Kriterlerinize uygun ürün bulunamadı."
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_empty_shop
+msgid "View All Products"
+msgstr "Tüm Ürünleri Görüntüle"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_empty_cart
+msgid "Your Cart is Empty"
+msgstr "Sepetiniz Boş"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_empty_cart
+msgid "Looks like you haven't added anything to your cart yet."
+msgstr "Sepetinize henüz bir şey eklememişsiniz."
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_checkout_progress
+msgid "Cart"
+msgstr "Sepet"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_checkout_progress
+msgid "Address"
+msgstr "Adres"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_checkout_progress
+msgid "Payment"
+msgstr "Ödeme"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_checkout_progress
+msgid "Confirm"
+msgstr "Onay"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_checkout_breadcrumb
+msgid "Checkout"
+msgstr "Ödeme"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_topbar
+msgid "Muayene Başvurularınızı Unutmayınız !"
+msgstr "Muayene Başvurularınızı Unutmayınız !"
+
+#. module: protekenerji
+#: model:ir.model.fields,field_description:protekenerji.field_res_users__is_protek_customer
+msgid "Protek Customer"
+msgstr "Protek Müşterisi"
+
+#. module: protekenerji
+#: model:ir.model.fields,field_description:protekenerji.field_website__protek_shop_login_required
+msgid "Shop Login Required"
+msgstr "Mağaza Girişi Gerekli"
+
+#. module: protekenerji
+#: model:ir.model.fields,field_description:protekenerji.field_website__protek_primary_color
+msgid "Primary Color"
+msgstr "Ana Renk"
+
+#. module: protekenerji
+#: model:ir.model.fields,field_description:protekenerji.field_website__protek_secondary_color
+msgid "Secondary Color"
+msgstr "İkinci Renk"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_home_page
+msgid "Browse Products"
+msgstr "Ürünleri İncele"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_home_page
+msgid "About Us"
+msgstr "Hakkımızda"
+
+#. module: protekenerji
+#. Search bar labels
+msgid "Order Date"
+msgstr "Sipariş Tarihi"
+
+#. module: protekenerji
+msgid "Reference"
+msgstr "Referans"
+
+#. module: protekenerji
+msgid "Stage"
+msgstr "Aşama"
+
+#. module: protekenerji
+msgid "All"
+msgstr "Tümü"
+
+#. module: protekenerji
+msgid "Locked"
+msgstr "Kilitli"
+
+#. module: protekenerji
+msgid "Total Amount"
+msgstr "Toplam Tutar"
+
+#. module: protekenerji
+#: model:ir.ui.view,arch_db:protekenerji.protek_contact_page
+msgid "Contact Us"
+msgstr "Bize Ulaşın"
+
+#. module: protekenerji
+msgid "Price Range"
+msgstr "Fiyat Aralığı"
+
+#. module: protekenerji
+msgid "Sort By: Featured"
+msgstr "Sıralama: Öne Çıkan"
+
+#. module: protekenerji
+msgid "Search..."
+msgstr "Ara..."
+
+#. module: protekenerji
+msgid "items"
+msgstr "kalem"
+
