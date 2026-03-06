@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Shop Page Customizations -->
+    <template id="protek_shop_inherit" name="Protek Shop Layout" inherit_id="website_sale.products">
+        <!-- Add Protek styling class to products container -->
+        <xpath expr="//div[@id='products_grid']" position="attributes">
+            <attribute name="t-attf-class" add="protek-products-grid" separator=" "/>
+        </xpath>
+    </template>
+
+    <!-- Product Card Styling -->
+    <template id="protek_product_item" name="Protek Product Item" inherit_id="website_sale.products_item">
+        <xpath expr="//form[hasclass('oe_product_cart')]" position="attributes">
+            <attribute name="t-attf-class" add="protek-product-card" separator=" "/>
+        </xpath>
+    </template>
+
+    <!-- Empty Shop Message Template (standalone, not inherit) -->
+    <template id="protek_empty_shop" name="Protek Empty Shop">
+        <div class="protek-empty-shop text-center py-5">
+            <div class="protek-empty-icon mb-4">
+                <i class="fa fa-shopping-basket fa-5x text-muted"></i>
+            </div>
+            <h3 class="text-muted">No Products Found</h3>
+            <p class="text-muted mb-4">
+                We couldn't find any products matching your criteria.
+            </p>
+            <a href="/shop" class="btn btn-danger">
+                <i class="fa fa-refresh me-2"></i> View All Products
+            </a>
+        </div>
+    </template>
+</odoo>
+

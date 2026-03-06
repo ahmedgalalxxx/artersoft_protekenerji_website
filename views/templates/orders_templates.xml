@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- My Orders Page -->
+    <template id="portal_my_orders" name="Protek My Orders">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">My Orders</t>
+            </t>
+
+            <div class="protek-orders-page">
+                <!-- Orders Header -->
+                <div class="protek-orders-header mb-4">
+                    <div class="py-4 px-4 rounded" style="background: linear-gradient(135deg, #0A2251 0%, #1443A3 100%);">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="mb-2 text-white">
+                                    <i class="fa fa-file-text me-2" style="color: #E3000F;"></i>
+                                    My Orders
+                                </h2>
+                                <p class="mb-0" style="color: rgba(255,255,255,0.8);">
+                                    View and track your current orders
+                                </p>
+                            </div>
+                            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                <a href="/shop" class="btn btn-lg" style="background: #E3000F; color: white; border: none;">
+                                    <i class="fa fa-shopping-cart me-2"></i>
+                                    Continue Shopping
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orders List -->
+                <t t-if="orders">
+                    <div class="protek-orders-list">
+                        <div class="table-responsive">
+                            <table class="table table-hover protek-orders-table">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Order #</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th class="text-end">Total</th>
+                                        <th class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="orders" t-as="order">
+                                        <tr class="protek-order-row">
+                                            <td>
+                                                <a t-attf-href="/my/orders/#{order.id}" class="fw-bold text-danger">
+                                                    <t t-esc="order.name"/>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <span t-field="order.date_order" t-options='{"widget": "date"}'/>
+                                            </td>
+                                            <td>
+                                                <t t-if="order.state == 'sale'">
+                                                    <span class="badge bg-success">Confirmed</span>
+                                                </t>
+                                                <t t-elif="order.state == 'done'">
+                                                    <span class="badge bg-primary">Completed</span>
+                                                </t>
+                                                <t t-elif="order.state == 'draft'">
+                                                    <span class="badge bg-secondary">Draft</span>
+                                                </t>
+                                                <t t-elif="order.state == 'sent'">
+                                                    <span class="badge bg-info">Quotation Sent</span>
+                                                </t>
+                                                <t t-else="">
+                                                    <span class="badge bg-warning" t-esc="order.state"/>
+                                                </t>
+                                            </td>
+                                            <td class="text-end">
+                                                <span class="fw-bold" t-field="order.amount_total"
+                                                      t-options='{"widget": "monetary", "display_currency": order.currency_id}'/>
+                                            </td>
+                                            <td class="text-center">
+                                                <a t-attf-href="/my/orders/#{order.id}"
+                                                   class="btn btn-sm btn-outline-danger">
+                                                    <i class="fa fa-eye me-1"></i> View
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pager -->
+                        <div class="protek-orders-pager d-flex justify-content-center mt-4">
+                            <t t-call="portal.pager"/>
+                        </div>
+                    </div>
+                </t>
+
+                <!-- Empty Orders Message -->
+                <t t-else="">
+                    <div class="protek-empty-orders text-center py-5">
+                        <div class="protek-empty-icon mb-4">
+                            <i class="fa fa-file-text-o fa-5x text-muted"></i>
+                        </div>
+                        <h3 class="text-muted">No Orders Yet</h3>
+                        <p class="text-muted mb-4">
+                            You haven't placed any orders yet. Start shopping to see your orders here.
+                        </p>
+                        <a href="/shop" class="btn btn-danger btn-lg">
+                            <i class="fa fa-shopping-bag me-2"></i> Start Shopping
+                        </a>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <!-- Single Order Page -->
+    <template id="portal_order_page" name="Protek Order Details">
+        <t t-call="portal.portal_layout">
+            <t t-set="o_portal_fullwidth_alert" t-value="True"/>
+
+            <div class="protek-order-detail-page">
+                <!-- Order Header -->
+                <div class="protek-order-header mb-4">
+                    <div class="py-4 px-4 rounded" style="background: linear-gradient(135deg, #0A2251 0%, #1443A3 100%);">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="mb-2 text-white">
+                                    <i class="fa fa-file-text me-2" style="color: #E3000F;"></i>
+                                    Order: <t t-esc="order.name"/>
+                                </h2>
+                                <p class="mb-0" style="color: rgba(255,255,255,0.8);">
+                                    Placed on <span t-field="order.date_order" t-options='{"widget": "date"}'/>
+                                </p>
+                            </div>
+                            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                <a href="/my/orders" class="btn btn-lg" style="background: transparent; color: white; border: 2px solid white;">
+                                    <i class="fa fa-arrow-left me-2"></i>
+                                    Back to Orders
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Order Items -->
+                    <div class="col-lg-8 mb-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white">
+                                <h5 class="mb-0">
+                                    <i class="fa fa-list me-2 text-danger"></i>
+                                    Order Items
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table protek-order-items-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th class="text-center">Quantity</th>
+                                                <th class="text-end">Unit Price</th>
+                                                <th class="text-end">Subtotal</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="order.order_line" t-as="line">
+                                                <tr>
+                                                    <td>
+                                                        <span class="fw-bold" t-field="line.name"/>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span t-field="line.product_uom_qty"/>
+                                                        <span t-field="line.product_uom"/>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <span t-field="line.price_unit"
+                                                              t-options='{"widget": "monetary", "display_currency": order.currency_id}'/>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <span class="fw-bold" t-field="line.price_subtotal"
+                                                              t-options='{"widget": "monetary", "display_currency": order.currency_id}'/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header bg-white">
+                                <h5 class="mb-0">
+                                    <i class="fa fa-calculator me-2 text-danger"></i>
+                                    Order Summary
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Subtotal:</span>
+                                    <span t-field="order.amount_untaxed"
+                                          t-options='{"widget": "monetary", "display_currency": order.currency_id}'/>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Tax:</span>
+                                    <span t-field="order.amount_tax"
+                                          t-options='{"widget": "monetary", "display_currency": order.currency_id}'/>
+                                </div>
+                                <hr/>
+                                <div class="d-flex justify-content-between">
+                                    <span class="fw-bold">Total:</span>
+                                    <span class="fw-bold text-danger" t-field="order.amount_total"
+                                          t-options='{"widget": "monetary", "display_currency": order.currency_id}'/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Status -->
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white">
+                                <h5 class="mb-0">
+                                    <i class="fa fa-info-circle me-2 text-danger"></i>
+                                    Order Status
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <t t-if="order.state == 'sale'">
+                                    <div class="alert alert-success mb-0">
+                                        <i class="fa fa-check-circle me-2"></i>
+                                        Order Confirmed
+                                    </div>
+                                </t>
+                                <t t-elif="order.state == 'done'">
+                                    <div class="alert alert-primary mb-0">
+                                        <i class="fa fa-check-double me-2"></i>
+                                        Order Completed
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <div class="alert alert-info mb-0">
+                                        <i class="fa fa-clock-o me-2"></i>
+                                        <t t-esc="order.state"/>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Past Orders Page -->
+    <template id="portal_past_orders" name="Protek Past Orders">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Past Orders</t>
+            </t>
+
+            <div class="protek-past-orders-page">
+                <!-- Past Orders Header -->
+                <div class="protek-orders-header mb-4">
+                    <div class="py-4 px-4 rounded" style="background: linear-gradient(135deg, #0A2251 0%, #1443A3 100%);">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <h2 class="mb-2 text-white">
+                                    <i class="fa fa-history me-2" style="color: #E3000F;"></i>
+                                    Order History
+                                </h2>
+                                <p class="mb-0" style="color: rgba(255,255,255,0.8);">
+                                    View your completed and past orders
+                                </p>
+                            </div>
+                            <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                                <a href="/my/orders" class="btn btn-lg me-2" style="background: transparent; color: white; border: 2px solid white;">
+                                    <i class="fa fa-file-text me-2"></i>
+                                    Current Orders
+                                </a>
+                                <a href="/shop" class="btn btn-lg" style="background: #E3000F; color: white; border: none;">
+                                    <i class="fa fa-shopping-cart me-2"></i>
+                                    Shop
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Past Orders List -->
+                <t t-if="orders">
+                    <div class="protek-orders-list">
+                        <div class="table-responsive">
+                            <table class="table table-hover protek-orders-table">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Order #</th>
+                                        <th>Date</th>
+                                        <th>Items</th>
+                                        <th class="text-end">Total</th>
+                                        <th class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="orders" t-as="order">
+                                        <tr class="protek-order-row">
+                                            <td>
+                                                <a t-attf-href="/my/orders/#{order.id}" class="fw-bold text-danger">
+                                                    <t t-esc="order.name"/>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <span t-field="order.date_order" t-options='{"widget": "date"}'/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="len(order.order_line)"/> items
+                                            </td>
+                                            <td class="text-end">
+                                                <span class="fw-bold" t-field="order.amount_total"
+                                                      t-options='{"widget": "monetary", "display_currency": order.currency_id}'/>
+                                            </td>
+                                            <td class="text-center">
+                                                <a t-attf-href="/my/orders/#{order.id}"
+                                                   class="btn btn-sm btn-outline-danger me-1">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                                <a t-attf-href="/my/orders/#{order.id}?report_type=pdf&amp;download=true"
+                                                   class="btn btn-sm btn-outline-secondary">
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pager -->
+                        <div class="protek-orders-pager d-flex justify-content-center mt-4">
+                            <t t-call="portal.pager"/>
+                        </div>
+                    </div>
+                </t>
+
+                <!-- Empty Past Orders Message -->
+                <t t-else="">
+                    <div class="protek-empty-orders text-center py-5">
+                        <div class="protek-empty-icon mb-4">
+                            <i class="fa fa-history fa-5x text-muted"></i>
+                        </div>
+                        <h3 class="text-muted">No Past Orders</h3>
+                        <p class="text-muted mb-4">
+                            Your order history will appear here once you complete orders.
+                        </p>
+                        <a href="/shop" class="btn btn-danger btn-lg">
+                            <i class="fa fa-shopping-bag me-2"></i> Start Shopping
+                        </a>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <!-- Add Orders to Portal Home -->
+    <template id="portal_my_home_orders" name="Show Orders on Portal" inherit_id="portal.portal_my_home">
+        <xpath expr="//div[@id='portal_client_category']" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/protekenerji/static/src/img/orders.svg'"/>
+                <t t-set="title">Orders</t>
+                <t t-set="text">View your current orders</t>
+                <t t-set="url" t-value="'/my/orders'"/>
+                <t t-set="placeholder_count" t-value="'order_count'"/>
+            </t>
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/protekenerji/static/src/img/history.svg'"/>
+                <t t-set="title">Past Orders</t>
+                <t t-set="text">View your order history</t>
+                <t t-set="url" t-value="'/my/past-orders'"/>
+            </t>
+        </xpath>
+    </template>
+</odoo>
+

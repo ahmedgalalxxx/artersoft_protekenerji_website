@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+    <!-- Protek Enerji Website Menus -->
+
+    <!-- Delete default Home menus with empty/root URL -->
+    <delete model="website.menu" search="[('name', 'ilike', 'home'), ('url', 'in', ['/', '/?', '', False])]"/>
+
+    <!-- Create custom Home menu that redirects to main Protek Enerji website -->
+    <record id="menu_protek_home" model="website.menu">
+        <field name="name">Home</field>
+        <field name="url">http://www.protekenerji.com/</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="menu_protek_my_orders" model="website.menu">
+        <field name="name">My Orders</field>
+        <field name="url">/my/orders</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="menu_protek_past_orders" model="website.menu">
+        <field name="name">Past Orders</field>
+        <field name="url">/my/past-orders</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">25</field>
+    </record>
+
+    <record id="menu_protek_about" model="website.menu">
+        <field name="name">About Us</field>
+        <field name="url">/protek/about</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="menu_protek_gdpr" model="website.menu">
+        <field name="name">Privacy Policy (GDPR)</field>
+        <field name="url">/protek/gdpr</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">40</field>
+    </record>
+</odoo>
+

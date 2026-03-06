@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_protek_customer_sale_order,protek.customer.sale.order,sale.model_sale_order,base.group_portal,1,0,0,0
+access_protek_customer_sale_order_line,protek.customer.sale.order.line,sale.model_sale_order_line,base.group_portal,1,0,0,0
+access_protek_customer_product_template,protek.customer.product.template,product.model_product_template,base.group_portal,1,0,0,0
+access_protek_customer_product_product,protek.customer.product.product,product.model_product_product,base.group_portal,1,0,0,0
+

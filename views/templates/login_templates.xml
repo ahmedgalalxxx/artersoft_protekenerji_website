@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Login Required Message for Shop Template (standalone) -->
+    <template id="protek_shop_login_required" name="Protek Shop Login Required">
+        <t t-call="website.layout">
+            <div id="wrap" class="protek-login-required">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="card border-0 shadow-lg">
+                                <div class="card-body text-center p-5">
+                                    <div class="protek-lock-icon mb-4">
+                                        <i class="fa fa-lock fa-5x" style="color: #E3000F;"></i>
+                                    </div>
+                                    <h2 class="fw-bold mb-3">Login Required</h2>
+                                    <p class="text-muted mb-4">
+                                        To access our shop and make purchases, you need to be logged in. 
+                                        This helps us provide you with a personalized shopping experience 
+                                        and secure transactions.
+                                    </p>
+                                    <div class="d-grid gap-3">
+                                        <a href="/web/login?redirect=/shop" class="btn btn-danger btn-lg">
+                                            <i class="fa fa-sign-in me-2"></i> Login to Your Account
+                                        </a>
+                                        <a href="/web/signup" class="btn btn-outline-danger btn-lg">
+                                            <i class="fa fa-user-plus me-2"></i> Create New Account
+                                        </a>
+                                    </div>
+                                    <hr class="my-4"/>
+                                    <div class="protek-benefits">
+                                        <h5 class="fw-bold mb-3">Benefits of Creating an Account</h5>
+                                        <div class="row g-3 text-start">
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fa fa-check-circle text-success me-2 mt-1"></i>
+                                                    <span>Track your orders</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fa fa-check-circle text-success me-2 mt-1"></i>
+                                                    <span>Faster checkout</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fa fa-check-circle text-success me-2 mt-1"></i>
+                                                    <span>Order history</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fa fa-check-circle text-success me-2 mt-1"></i>
+                                                    <span>Exclusive offers</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Back to Home Link -->
+                            <div class="text-center mt-4">
+                                <a href="/protek/home" class="text-muted">
+                                    <i class="fa fa-arrow-left me-2"></i> Back to Home Page
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
+
